@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Models\raits;
+namespace App\Models\Traits;
 
 use App\Models\ReferralCode;
 
