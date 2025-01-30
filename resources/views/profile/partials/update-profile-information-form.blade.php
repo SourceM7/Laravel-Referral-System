@@ -60,5 +60,12 @@
                 >{{ __('Saved.') }}</p>
             @endif
         </div>
+
+        <div>
+            <x-input-label for="paypal_email" :value="__('Paypal email')" />
+            <x-text-input id="paypal_email" name="paypal_email" type="text" class="mt-1 block w-full" :value="old('paypal_email', $user->paypal_email)" required autofocus autocomplete="name" />
+            <x-input-error class="mt-2" :messages="$errors->get('paypal_email')" />
+        </div>
+
     </form>
 </section>
