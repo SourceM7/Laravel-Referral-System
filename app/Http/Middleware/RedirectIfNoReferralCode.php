@@ -15,7 +15,7 @@ class RedirectIfNoReferralCode
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!$request->referralsEnabled()){
+        if(!auth()->user()->referralsEnabled()){
             return redirect()->route('profile.edit');
         }
         return $next($request);
