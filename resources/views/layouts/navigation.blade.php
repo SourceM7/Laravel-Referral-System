@@ -38,7 +38,7 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
-                        @if (auth()->user()->referralsEnabled())
+                        @if (auth()->check() && auth()->user()->referralsEnabled())
                         <x-dropdown-link :href="route('referrals.index')">
                             {{ __('Referrals') }}
                         </x-dropdown-link>
