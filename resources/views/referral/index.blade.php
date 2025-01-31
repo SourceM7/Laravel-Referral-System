@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-<form action="" class="p-6 text-center sapce-y-6">
+<form action="{{route('referral.store',$referralCode)}}" method="get" class="p-6 text-center sapce-y-6">
 
 
 

@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReferralIndexController;
 use App\Http\Controllers\ReferralsDashboardController;
+use App\Http\Controllers\ReferralStoreController;
 use App\Http\Middleware\RedirectIfNoReferralCode;
 use Illuminate\Support\Facades\Route;
 
@@ -10,12 +12,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',DashboardController::class)->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::get('/referral/{referralCode:code}',ReferralIndexController::class)->name('referral.index');
+Route::post('/referral/{referralCode:code}',ReferralStoreController::class)->name('referral.store');
 
 
 
